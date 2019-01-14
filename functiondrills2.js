@@ -26,7 +26,7 @@ beyond(0);
 function decode(code) {
   let decodedLetters = [];
   let codeArray = code.split(' ');
-  for ( let i = 0; i < codeArray.length - 1; i++ ) {
+  for ( let i = 0; i < codeArray.length; i++ ) {
     if ( codeArray[i][0] === 'a' ) {
       decodedLetters.push(codeArray[i][1]);
     }
@@ -48,3 +48,34 @@ function decode(code) {
 
 decode('craft block argon meter bells brown croon droop');
 
+function howManyDaysInMonth(month, leapYear) {
+  if ( month === 'February' && leapYear === true) {
+    return 'February has 29 days';
+  }
+  else {
+    let days;
+    switch(month) {
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+      days = `${month} has 31 days`;
+      break;
+    case 'February':
+      days = 'February has 28 days';
+      break;
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+      days = `${month} has 30 days`;
+      break;
+    }
+    return days;
+  }
+}
+
+howManyDaysInMonth('February', true);
