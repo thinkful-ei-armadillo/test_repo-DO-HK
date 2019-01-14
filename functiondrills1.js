@@ -1,7 +1,12 @@
 'use strict';
 
 function getYearOfBirth(age) {
-  return 2019 - age;
+  if (2019 - age) {
+    throw new Error ('Age cannot be negative');
+  }
+  else {
+    return 2019 - age;
+  }
 }
 
 function createGreeting(name, age) {
