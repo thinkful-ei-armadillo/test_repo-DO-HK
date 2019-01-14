@@ -1,6 +1,7 @@
 'use strict';
 function createGreeting() {
-  console.log('Hi my name is Daniel and I am 29 years old');
+  return 'Hi my name is Daniel and I am 29 years old';
 }
 
-createGreeting();
+const greeting1 = createGreeting();
+console.log(greeting1)
