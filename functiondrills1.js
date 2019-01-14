@@ -11,7 +11,13 @@ function getYearOfBirth(age) {
 
 function createGreeting(name, age) {
   const yob = getYearOfBirth(age);
-  return 'Hi my name is ${name} and I am ${age} years old. I was born in ${yob}.';
+  if (name === String && age === Number) {
+    return 'Hi my name is ${name} and I am ${age} years old. I was born in ${yob}.';
+  }
+  else {
+    // return 'Your arguments appear to be invalid. Please check them and retry.';
+    throw new TypeError();
+  }
 }
 
 createGreeting('Daniel', 29);
