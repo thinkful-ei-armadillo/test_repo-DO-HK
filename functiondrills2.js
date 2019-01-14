@@ -79,3 +79,52 @@ function howManyDaysInMonth(month, leapYear) {
 }
 
 howManyDaysInMonth('February', true);
+
+function rockPaperScissors(num) {
+  const randomNo = Math.floor(Math.random() * 3) + 1;
+  const rock = 1;
+  const paper = 2;
+  const scissors = 3;
+  let result;
+  if ( num > 0 && num < 4 ) {
+    if ( num === rock ) {
+      if ( randomNo === rock ) {
+        result = 'Rock cannot beat rock. It is a tie!';
+      }
+      else if ( randomNo === paper ) {
+        result = 'Paper wraps rock. Computer wins!';
+      }
+      else if ( randomNo === scissors ) {
+        result = 'Rock breaks scissors. You win!';
+      }
+    }
+    else if ( num === paper ) {
+      if ( randomNo === rock ) {
+        result = 'Paper wraps rock. You win!';
+      }
+      else if ( randomNo === paper ) {
+        result = 'Paper cannot beat paper. It is a tie!';
+      }
+      else if ( randomNo === scissors ) {
+        result = 'Paper is cut by scissors. Computer wins!';
+      }
+    }
+    else if ( num === scissors ) {
+      if ( randomNo === rock ) {
+        result = 'Rock breaks scissors. Computer wins!';
+      }
+      else if ( randomNo === paper ) {
+        result = 'Paper is cut by scissors. You win!';
+      }
+      else if ( randomNo === scissors ) {
+        result = 'Scissors cannot beat scissors. It is a tie!';
+      }
+    }
+  }
+  else {
+    return 'Please enter 1, 2, or 3 to play! 1 is Rock, 2 is Paper, 3 is Scissors.';
+  }
+  return result;
+}
+
+rockPaperScissors(1);
